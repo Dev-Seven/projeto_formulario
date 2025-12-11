@@ -23,3 +23,7 @@
     --stroke-hightlight: #F3541C;
     --semantic-error: #DC2626;
 }
+
+body {
+    overflow: hidden; /*Garante que não terá transbordamento e nem barra de rolagem (Quando existe o transbordamento do elemento)*/
+}

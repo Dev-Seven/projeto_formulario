@@ -1,0 +1,26 @@
+#app {
+    display: grid;
+    grid-template-columns: 51.24% 48.75%;
+
+    height: 100vh; /*100 view port significa toda parte visível*/
+    overflow: hidden;
+}
+
+main {
+    overflow: auto; /*A rolagem vai acontecer apenas no main*/
+    padding: 4rem;
+
+    .main-container {
+        max-width: 33rem;
+        margin-left: auto;
+    }
+}
+
+aside {
+    padding: 4rem;
+    background-color: var(--surface-secondary);
+
+    .aside-container {
+        max-width: 31rem;
+    }
+}
