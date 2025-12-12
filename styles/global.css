@@ -26,4 +26,15 @@
 
 body {
     overflow: hidden; /*Garante que não terá transbordamento e nem barra de rolagem (Quando existe o transbordamento do elemento)*/
+    font: var(--text);
+    color: var(--text-secondary);
+}
+
+h1, h2 {
+    color: var(--text-primary);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
