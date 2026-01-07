@@ -52,3 +52,21 @@ input [type="data"] {
 select {
     background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
 }
+
+.address .flex {
+    gap: 1.25rem;
+}
+
+/*Todo input-wrapper que tenha um campo disable*/
+.input-wrapper:has([disabled]) {
+    opacity: 0.5;
+}
+
+/*Dentro dos inputs eu quero todos os elementos que tenham disabled*/
+input {
+    &[disabled] {
+        background-color: var(--surface-disable);
+        border: 1px solid var(--stroke-default);
+        color: var(--text-primary);
+    }
+}
