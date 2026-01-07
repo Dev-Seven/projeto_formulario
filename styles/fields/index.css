@@ -69,4 +69,37 @@ input {
         border: 1px solid var(--stroke-default);
         color: var(--text-primary);
     }
+
+    /*Dentro dos inputs se algum campo tiver o required, esse seletor vai saber*/
+    &:invalid {
+        border: 0.125rem solid var(--semantic-error);
+    }
+
+    /*Se ao lado do input tiver um small eu quero esse small. O + define o seletor irmão*/
+    & + small {
+        font: var(--text-sm);
+        color: #78716C;
+
+        display: inline-block;
+        margin-top: 0.25rem;
+    }
+
+    /*Se tiver um required e ao lado dele (+), tiver um .error*/
+    &[required] + .error {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        font: var(--text-sm);
+        color: var(--semantic-error);
+
+        margin-top: 0.25rem;
+    }
+
+    /*Se o input for valido e ao lado dele tiver o .error
+    Outro ponto é o :not(.focus), essa expressão significa
+    Quando meu input não estiver em foco e for valido.*/
+    &:not(.focus):valid + .error {
+        display: none;
+    }
 }
