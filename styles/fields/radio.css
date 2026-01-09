@@ -1,0 +1,63 @@
+/*Quero o label que tenha como irmão (do lado), um .radio-wrapper */
+label + .radio-wrapper {
+    margin-top: 1rem;
+}
+
+.radio-wrapper {
+    display: grid;
+    /*No tamanho das colunas da grid eu quero que ele se auto regule (auto-fit)
+    Porém eu estou definindo o min e max que eu quero min = 7.5rem | max = 1fr*/
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    gap: 1rem;
+}
+
+.radio-inner {
+    border: 1px solid var(--stroke-default);
+    border-radius: 0.5rem;
+
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+
+    /*     Cima - Baixo - Laterais*/
+    padding: 2rem 0.5rem 0.5rem;
+    position: relative;
+
+    /*Dentro do .radio-inner eu quero os inputs, que estejam em focus ou com
+      hover, e quero tirar toda configuração dele, pra ficar sem nenhum seletor
+      padrão do radio.*/
+    & input,
+    & input:focus,
+    & input:hover {
+        all: unset;
+        position: absolute;
+        inset: 0;
+    }
+
+    .radio-image {
+        background-image: url(/assets/icons/radio-default.svg);
+
+        width: 1.5rem;
+        height: 1.5rem;
+
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+
+    &:hover, &:focus-within {
+        border: 1px solid var(--stroke-hightlight);
+
+        & .radio-image {
+            background-image: url(/assets/icons/radio-hover.svg);
+        }
+    }
+
+    &:has(:checked) {
+        border: 2px solid var(--stroke-hightlight);
+
+        & .radio-image {
+            background-image: url(/assets/icons/radio-checked.svg);
+        }
+    }
+}
